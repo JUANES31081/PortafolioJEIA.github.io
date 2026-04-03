@@ -104,4 +104,4 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 
-*Made with ❤️ and lots of data by Juan Esteban Infante Andrade*
+*Made with heart and lots of data by Juan Esteban Infante Andrade*
