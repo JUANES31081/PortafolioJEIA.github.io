@@ -1,0 +1,102 @@
+/* ====================================
+   DATA COSMOS — Animations
+   ==================================== */
+
+/* ===== KEYFRAMES ===== */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-18px); }
+}
+@keyframes glow-pulse {
+  0%,100% { opacity: 0.6; box-shadow: 0 0 20px rgba(0,212,255,0.2); }
+  50%      { opacity: 1;   box-shadow: 0 0 50px rgba(0,212,255,0.5); }
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes scroll-bounce {
+  0%,100% { transform: translateY(0); opacity: 0.9; }
+  50%      { transform: translateY(10px); opacity: 0.3; }
+}
+@keyframes border-flow {
+  0%,100% { border-color: rgba(0,212,255,0.25); }
+  50%      { border-color: rgba(168,85,247,0.35); }
+}
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+@keyframes scan {
+  0%   { top: -5%; opacity: 0.6; }
+  100% { top: 105%; opacity: 0; }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+@keyframes tag-appear {
+  from { opacity: 0; transform: scale(0.8) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== HERO ENTRANCE STAGGER ===== */
+.hero-greeting   { animation: hero-in 0.7s 0.3s ease both; }
+.hero-name       { animation: hero-in 0.7s 0.5s ease both; }
+.hero-titles     { animation: hero-in 0.7s 0.7s ease both; }
+.hero-description{ animation: hero-in 0.7s 0.9s ease both; }
+.hero-cta        { animation: hero-in 0.7s 1.1s ease both; }
+.hero-socials    { animation: hero-in 0.7s 1.3s ease both; }
+
+/* ===== TYPEWRITER CURSOR ===== */
+.typed-cursor { animation: blink 1s step-end infinite; }
+
+/* ===== SCROLL INDICATOR ===== */
+.scroll-line { animation: scroll-bounce 2s ease-in-out infinite; }
+
+/* ===== AVATAR GLOW ===== */
+.avatar-glow { animation: glow-pulse 3s ease-in-out infinite; }
+
+/* ===== HERO NAME GRADIENT ANIMATE ===== */
+.hero-name {
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite, hero-in 0.7s 0.5s ease both;
+}
+
+/* ===== FEATURED BADGE ===== */
+.featured-badge { animation: glow-pulse 2.5s ease-in-out infinite; }
+
+/* ===== CONTACT CARD BORDERS ===== */
+.contact-card { animation: border-flow 4s ease-in-out infinite; }
+
+/* ===== SHIMMER ON SKILL TAGS ===== */
+.skill-tag.hot::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 2.5s ease-in-out infinite;
+  border-radius: inherit;
+}
+
+/* ===== CARD HOVER — subtle lift instead of float (avoids conflict with flip transform) ===== */
+/* float animation removed: it conflicts with the 3D rotateY flip transform */
+
+/* ===== SKILL TAG APPEAR ===== */
+.skill-category:nth-child(1) .skill-tag { animation: tag-appear 0.4s ease both; }
+.skill-category:nth-child(2) .skill-tag { animation: tag-appear 0.4s 0.1s ease both; }
+.skill-category:nth-child(3) .skill-tag { animation: tag-appear 0.4s 0.2s ease both; }
+.skill-category:nth-child(4) .skill-tag { animation: tag-appear 0.4s 0.3s ease both; }
+
+/* ===== SECTION DIVIDER PULSE ===== */
+.section-divider::after {
+  animation: glow-pulse 3s ease-in-out infinite;
+}

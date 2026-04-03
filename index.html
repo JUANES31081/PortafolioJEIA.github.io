@@ -1,190 +1,596 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Proyectos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            padding-top: 60px; /* Espacio para la barra de navegación fija */
-        }
-        .project-card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        .project-card.flipped {
-            transform: rotateY(180deg);
-        }
-        .project-front, .project-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-        }
-        .project-back {
-            background-color: #ffffff;
-            transform: rotateY(180deg);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .project-image {
-            height: 200px;
-            object-fit: cover;
-        }
-        .tag {
-            background-color: #e9ecef;
-            color: #495057;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-        }
-        .github-link {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juan Esteban Infante — Data Scientist & AI Engineer. Expert in LLMs, GenAI, MLOps, Vertex AI and end-to-end ML pipelines.">
+  <meta name="keywords" content="Data Scientist, AI Engineer, MLOps, Machine Learning, Vertex AI, GenAI, LangChain, Colombia">
+  <meta name="author" content="Juan Esteban Infante Andrade">
+  <meta property="og:title" content="Juan Infante | Data Scientist & AI Engineer">
+  <meta property="og:description" content="Systems Engineer focused on Data Science and AI — LLMs, GenAI, MLOps, Vertex AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://juanes31081.github.io/PortafolioJEIA.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Juan Infante | Data Scientist & AI Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Mi Portafolio</a>
-            <a href="https://github.com/JUANES31081/PORTAFOLIO_" target="_blank" class="btn btn-outline-dark">
-                <i class="fab fa-github"></i> Ver código en GitHub
-            </a>
-        </div>
-    </nav>
-    <div class="container py-5">
-        <h1 class="text-center mb-5">Portafolio de Proyectos Juan Infante</h1>
-        
-        <div class="row g-4">
-            <div class="col-md-4" data-aos="fade-up">
-                <div class="project-card position-relative" style="height: 400px;">
-                    <div class="project-front">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF4Sl9S1i9uim0eyl9CJ_35Q2YwEslM18fig&s" alt="Proyecto 1" class="img-fluid project-image w-100">
-                        <div class="p-3">
-                            <h3>Inteligencia Artificial Point-E</h3>
-                            <p>Usar la IA Point-E de OpenAI.</p>
-                            <div>
-                                <span class="tag">Python</span>
-                                <span class="tag">Jupyter Notebooks</span>
-                                <span class="tag">Github</span>
-                            </div>
-                            <button class="btn btn-primary mt-2" onclick="flipCard(this)">Ver detalles</button>
-                        </div>
-                    </div>
-                    <div class="project-back">
-                        <h3>Inteligencia Artificial Point-E - Detalles</h3>
-                        <p>Este script cubre la fase inicial de un proyecto donde el fin fue minimizar las fases de modelado 3D de objetos para su uso en VR.</p>
-                        <a href="https://github.com/JUANES31081/PORTAFOLIO_/blob/main/Texto_a_modelo_OpenAI_Point_E.ipynb" target="_blank" class="btn btn-outline-dark mb-2">
-                            <i class="fab fa-github"></i> Ver código en GitHub
-                        </a>
-                        <button class="btn btn-secondary mt-2" onclick="flipCard(this)">Volver</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="project-card position-relative" style="height: 400px;">
-                    <div class="project-front">
-                        <img src="https://iasolver.es/wp-content/uploads/2021/08/procesamiento-del-lenguaje-natural-1.jpg" alt="Proyecto 2" class="img-fluid project-image w-100">
-                        <div class="p-3">
-                            <h3>Red Neuronal PLN</h3>
-                            <p>Red neuronal para charlar.</p>
-                            <div>
-                                <span class="tag">Python</span>
-                                <span class="tag">Jupyter Notebooks</span>
-                            </div>
-                            <button class="btn btn-primary mt-2" onclick="flipCard(this)">Ver detalles</button>
-                        </div>
-                    </div>
-                    <div class="project-back">
-                        <h3>Red Neuronal PLN - Detalles</h3>
-                        <p>Este fue una prueba realizada para confirmar la posibilidad de generar un chatbot capaz de tener conversaciones de forma natural, se realizaron pruebas de entrenamiento con data de peliculas, Wikipedia entre otras. Los resultados obtenidos no fueron los mejores debido a la falta de recursos para el entrenamiento.</p>
-                        <a href="https://github.com/JUANES31081/PORTAFOLIO_/blob/main/Red%20PLN.ipynb" target="_blank" class="btn btn-outline-dark mb-2">
-                            <i class="fab fa-github"></i> Ver código en GitHub
-                        </a>
-                        <button class="btn btn-secondary mt-2" onclick="flipCard(this)">Volver</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-card position-relative" style="height: 400px;">
-                    <div class="project-front">
-                        <img src="https://juanes31081.github.io/PaginaJyC.github.io/Nachi.jpg" alt="Proyecto 3" class="img-fluid project-image w-100">
-                        <div class="p-3">
-                            <h3>Clasificacion Perritos</h3>
-                            <p>Codigo para generacion modelo red neuronal.</p>
-                            <div>
-                                <span class="tag">Python</span>
-                                <span class="tag">Github</span>
-                                <span class="tag">Docker</span>
-                                <span class="tag">Tensorflow Serving</span>
-                            </div>
-                            <button class="btn btn-primary mt-2" onclick="flipCard(this)">Ver detalles</button>
-                        </div>
-                    </div>
-                    <div class="project-back">
-                        <h3>Clasificacion Perritos - Detalles</h3>
-                        <p>Este proyecto nacio con el fin de dar solucion a problemas vistos con el cuidado de las mascotas, resumidamente el proyecto tiene 3 fases: generacion de modelo mediante el codigo anclado, puesta en produccion del modelo con Docker y Ts, y por ultimo uso de la API REST para predicciones mediante una APP</p>
-                        <a href="https://github.com/JUANES31081/PORTAFOLIO_/blob/main/Clasificacion_perritos.ipynb" target="_blank" class="btn btn-outline-dark mb-2">
-                            <i class="fab fa-github"></i> Ver código en GitHub
-                        </a>
-                        <button class="btn btn-secondary mt-2" onclick="flipCard(this)">Volver</button>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="project-card position-relative" style="height: 400px;">
-                    <div class="project-front">
-                        <img src="https://www.dongee.com/tutoriales/content/images/2022/11/image-82.png" alt="Proyecto 3" class="img-fluid project-image w-100">
-                        <div class="p-3">
-                            <h3>Web scraping</h3>
-                            <p>codigo obtencion data mediante web scrap.</p>
-                            <div>
-                                <span class="tag">Python</span>
-                            </div>
-                            <button class="btn btn-primary mt-2" onclick="flipCard(this)">Ver detalles</button>
-                        </div>
-                    </div>
-                    <div class="project-back">
-                        <h3>Web scraping - Detalles</h3>
-                        <p>Este proyecto fue desarrollado con el fin de aprender un poco mas de la obtencion de informacion de paginas web y el como navegar en su estructura.</p>
-                        <a href="https://github.com/JUANES31081/PORTAFOLIO_/blob/main/Web_scarpping.ipynb" target="_blank" class="btn btn-outline-dark mb-2">
-                            <i class="fab fa-github"></i> Ver código en GitHub
-                        </a>
-                        <button class="btn btn-secondary mt-2" onclick="flipCard(this)">Volver</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" aria-label="JEIA Home">
+        <span class="logo-bracket">&lt;</span>JEIA<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none"><a href="#about"    class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#skills"   class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#contact"  class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+      <a href="https://github.com/JUANES31081/PORTAFOLIO_" target="_blank" rel="noopener" class="btn btn-outline nav-cta" id="nav-github-btn">
+        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
+  <!-- ========== HERO ========== -->
+  <section id="home" class="hero-section" aria-label="Hero section">
+    <div id="particles-js" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-greeting">
+        <span class="greeting-emoji" aria-hidden="true">👋</span> Hi, I'm
+      </p>
+      <h1 class="hero-name">Juan Infante</h1>
+      <div class="hero-titles" aria-live="polite">
+        <span class="title-prefix">I'm a&nbsp;</span>
+        <span class="typed-text" id="typed-text" aria-label="Data Scientist, AI Engineer, MLOps Practitioner"></span>
+        <span class="typed-cursor" aria-hidden="true">|</span>
+      </div>
+      <p class="hero-description">
+        Systems Engineer oriented towards <strong>Data Science</strong> and <strong>AI development</strong>.
+        Advanced expertise across the complete ML lifecycle — from experimentation in
+        <span class="highlight">Vertex AI</span> to deploying microservices in production.
+        Passionate about applying cutting-edge technology
+        (<span class="highlight">LLMs · GenAI · MLOps</span>)
+        to transform strategic needs into scalable technological solutions.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary" id="hero-projects-btn">
+          <i class="fas fa-rocket" aria-hidden="true"></i> View Projects
+        </a>
+        <a href="#contact" class="btn btn-outline" id="hero-contact-btn">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i> Get In Touch
+        </a>
+      </div>
+      <div class="hero-socials" aria-label="Social media links">
+        <a href="https://github.com/JUANES31081" target="_blank" rel="noopener" class="social-link" aria-label="GitHub Profile" id="social-github">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/juan-esteban-infante-andrade-573292267/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn Profile" id="social-linkedin">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:juanes.jia@gmail.com" class="social-link" aria-label="Email Juan Infante" id="social-email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-        function flipCard(button) {
-            const card = button.closest('.project-card');
-            card.classList.toggle('flipped');
-        }
-    </script>
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section about-section" aria-label="About me">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-avatar reveal-left">
+          <div class="avatar-wrapper">
+            <div class="avatar-glow" aria-hidden="true"></div>
+            <img src="assets/img/avatar.png" alt="Juan Esteban Infante — Data Scientist & AI Engineer illustration" class="avatar-img">
+            <div class="avatar-badge" aria-hidden="true">
+              <i class="fas fa-brain"></i><span>AI Engineer</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <h3 class="about-subtitle">Systems Engineer → Data Scientist → AI Engineer</h3>
+          <p class="about-text">
+            I'm <strong>Juan Esteban Infante</strong>, a Systems Engineer from Colombia with a deep passion
+            for the intersection of data, artificial intelligence, and real-world impact. My journey began with
+            traditional software development, but quickly evolved into the world of machine learning and
+            data-driven decision making.
+          </p>
+          <p class="about-text">
+            Today I specialize in building end-to-end ML pipelines — from data ingestion and feature engineering,
+            to model training on <strong>Google Cloud / Vertex AI</strong> and production deployment via
+            <strong>Docker microservices</strong>. I'm particularly excited about the GenAI revolution and
+            actively work with <strong>LLMs, LangChain, and Gemini</strong>.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-target="7">7+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="10">10+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="3">3+</span>
+              <span class="stat-label">Years in ML</span>
+            </div>
+          </div>
+          <div class="about-actions">
+            <a href="https://www.linkedin.com/in/juan-esteban-infante-andrade-573292267/" target="_blank" rel="noopener" class="btn btn-primary" id="about-linkedin-btn">
+              <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn Profile
+            </a>
+            <a href="https://github.com/JUANES31081/PORTAFOLIO_" target="_blank" rel="noopener" class="btn btn-ghost" id="about-github-btn">
+              <i class="fab fa-github" aria-hidden="true"></i> All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills" class="section skills-section" aria-label="Skills and technologies">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Tech Stack</span>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
+        <p class="section-subtitle">The tools I use to bring data to life and AI to production</p>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-category-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+          <h3>AI &amp; Machine Learning</h3>
+          <div class="skill-tags">
+            <span class="skill-tag hot">LLMs</span>
+            <span class="skill-tag hot">GenAI</span>
+            <span class="skill-tag hot">LangChain</span>
+            <span class="skill-tag hot">Gemini</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Keras</span>
+            <span class="skill-tag">Scikit-Learn</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Computer Vision</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-icon"><i class="fas fa-cloud" aria-hidden="true"></i></div>
+          <h3>Cloud &amp; MLOps</h3>
+          <div class="skill-tags">
+            <span class="skill-tag hot">Vertex AI</span>
+            <span class="skill-tag hot">Google Cloud</span>
+            <span class="skill-tag hot">Docker</span>
+            <span class="skill-tag">TensorFlow Serving</span>
+            <span class="skill-tag">MLflow</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Microservices</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
+          <h3>Data Science</h3>
+          <div class="skill-tags">
+            <span class="skill-tag hot">Python</span>
+            <span class="skill-tag hot">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">Jupyter</span>
+            <span class="skill-tag">Plotly</span>
+            <span class="skill-tag">Web Scraping</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-category-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+          <h3>Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">Git &amp; GitHub</span>
+            <span class="skill-tag">HTML / CSS / JS</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Cybersecurity</span>
+            <span class="skill-tag">VirusTotal API</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="section projects-section" aria-label="Portfolio projects">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Click a card to explore — hover to discover the magic</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="project-filters reveal-up" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all"    id="filter-all">All</button>
+        <button class="filter-btn"        data-filter="genai"  id="filter-genai">GenAI &amp; LLMs</button>
+        <button class="filter-btn"        data-filter="ml"     id="filter-ml">Machine Learning</button>
+        <button class="filter-btn"        data-filter="mlops"  id="filter-mlops">MLOps</button>
+        <button class="filter-btn"        data-filter="data"   id="filter-data">Data &amp; Security</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Card 1 — GenAI Agent (FEATURED) -->
+        <div class="project-item" data-category="genai">
+          <div class="project-card featured" id="card-genai-agent">
+            <div class="project-front">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=500&q=80" alt="Glowing AI neural network visualization" class="project-img">
+                <div class="project-overlay" aria-hidden="true"></div>
+                <span class="project-badge featured-badge">⭐ Featured</span>
+              </div>
+              <div class="project-info">
+                <div class="project-category-label">GenAI &amp; LLMs</div>
+                <h3 class="project-title">GenAI Research Agent</h3>
+                <p class="project-short">Autonomous AI research agent powered by Google Gemini &amp; LangChain.</p>
+                <div class="project-tags">
+                  <span class="tag">Gemini</span><span class="tag">LangChain</span><span class="tag">Python</span>
+                </div>
+                <button class="btn btn-primary flip-btn" onclick="flipCard(this)" id="flip-genai-front">
+                  <i class="fas fa-info-circle" aria-hidden="true"></i> Learn More
+                </button>
+              </div>
+            </div>
+            <div class="project-back">
+              <div class="back-category">GenAI &amp; LLMs</div>
+              <h3>GenAI Research Agent</h3>
+              <p>An autonomous research agent built with Google Gemini and LangChain. The agent searches, analyzes, and synthesizes information across multiple sources — showcasing advanced prompt engineering and agent architecture for real-world GenAI applications.</p>
+              <div class="back-tags">
+                <span class="tag">Gemini</span><span class="tag">LangChain</span><span class="tag">GenAI</span><span class="tag">Agents</span>
+              </div>
+              <div class="back-actions">
+                <a href="https://github.com/JUANES31081/PORTAFOLIO_/tree/main/Machine_Learning_Deep_Learning" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="fab fa-github" aria-hidden="true"></i> View Code
+                </a>
+                <button class="btn btn-ghost flip-btn" onclick="flipCard(this)">
+                  <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 — Churn Prediction -->
+        <div class="project-item" data-category="ml">
+          <div class="project-card" id="card-churn">
+            <div class="project-front">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="Data analytics charts dashboard" class="project-img">
+                <div class="project-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="project-info">
+                <div class="project-category-label">Machine Learning</div>
+                <h3 class="project-title">Customer Churn Prediction</h3>
+                <p class="project-short">End-to-end ML pipeline to predict and prevent customer churn.</p>
+                <div class="project-tags">
+                  <span class="tag">Scikit-Learn</span><span class="tag">Pandas</span><span class="tag">Python</span>
+                </div>
+                <button class="btn btn-primary flip-btn" onclick="flipCard(this)" id="flip-churn-front">
+                  <i class="fas fa-info-circle" aria-hidden="true"></i> Learn More
+                </button>
+              </div>
+            </div>
+            <div class="project-back">
+              <div class="back-category">Machine Learning</div>
+              <h3>Customer Churn Prediction</h3>
+              <p>Complete ML lifecycle: EDA, feature engineering, model selection, hyperparameter tuning, and evaluation metrics. Predicts which customers are likely to churn — enabling data-driven retention strategies with measurable business impact.</p>
+              <div class="back-tags">
+                <span class="tag">Scikit-Learn</span><span class="tag">EDA</span><span class="tag">Classification</span><span class="tag">Feature Eng.</span>
+              </div>
+              <div class="back-actions">
+                <a href="https://github.com/JUANES31081/PORTAFOLIO_/tree/main/Machine_Learning_Deep_Learning" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="fab fa-github" aria-hidden="true"></i> View Code
+                </a>
+                <button class="btn btn-ghost flip-btn" onclick="flipCard(this)">
+                  <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 — Dog Classifier MLOps -->
+        <div class="project-item" data-category="mlops">
+          <div class="project-card" id="card-dogs">
+            <div class="project-front">
+              <div class="project-img-wrapper">
+                <img src="https://juanes31081.github.io/PaginaJyC.github.io/Nachi.jpg" alt="Dog breed classification - CNN model training" class="project-img">
+                <div class="project-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="project-info">
+                <div class="project-category-label">Deep Learning &amp; MLOps</div>
+                <h3 class="project-title">Dog Breed Classifier + API</h3>
+                <p class="project-short">CNN model deployed with Docker &amp; TF Serving as a REST API.</p>
+                <div class="project-tags">
+                  <span class="tag">TensorFlow</span><span class="tag">Docker</span><span class="tag">TF Serving</span>
+                </div>
+                <button class="btn btn-primary flip-btn" onclick="flipCard(this)" id="flip-dogs-front">
+                  <i class="fas fa-info-circle" aria-hidden="true"></i> Learn More
+                </button>
+              </div>
+            </div>
+            <div class="project-back">
+              <div class="back-category">Deep Learning &amp; MLOps</div>
+              <h3>Dog Breed Classifier + REST API</h3>
+              <p>3-phase MLOps project: train a CNN with TensorFlow, containerize with Docker + TF Serving, and expose a REST API for real-time predictions. Demonstrates a complete model-to-production deployment workflow — a key skill in modern ML engineering.</p>
+              <div class="back-tags">
+                <span class="tag">TensorFlow</span><span class="tag">Docker</span><span class="tag">REST API</span><span class="tag">MLOps</span>
+              </div>
+              <div class="back-actions">
+                <a href="https://github.com/JUANES31081/PORTAFOLIO_/blob/main/Machine_Learning_Deep_Learning/Clasificacion_perritos.ipynb" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="fab fa-github" aria-hidden="true"></i> View Code
+                </a>
+                <button class="btn btn-ghost flip-btn" onclick="flipCard(this)">
+                  <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 — NLP Chatbot -->
+        <div class="project-item" data-category="ml">
+          <div class="project-card" id="card-nlp">
+            <div class="project-front">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=500&q=80" alt="Neural network NLP language model" class="project-img">
+                <div class="project-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="project-info">
+                <div class="project-category-label">NLP &amp; Deep Learning</div>
+                <h3 class="project-title">NLP Neural Network Chatbot</h3>
+                <p class="project-short">Neural network trained for natural language conversations.</p>
+                <div class="project-tags">
+                  <span class="tag">Keras</span><span class="tag">NLP</span><span class="tag">Python</span>
+                </div>
+                <button class="btn btn-primary flip-btn" onclick="flipCard(this)" id="flip-nlp-front">
+                  <i class="fas fa-info-circle" aria-hidden="true"></i> Learn More
+                </button>
+              </div>
+            </div>
+            <div class="project-back">
+              <div class="back-category">NLP &amp; Deep Learning</div>
+              <h3>NLP Neural Network Chatbot</h3>
+              <p>Experimental chatbot trained to hold natural conversations using movie scripts and Wikipedia data. An early exploration into sequence models and language generation — foundational knowledge that now powers my work with modern LLMs and agentic systems.</p>
+              <div class="back-tags">
+                <span class="tag">Keras</span><span class="tag">Seq2Seq</span><span class="tag">NLP</span><span class="tag">Jupyter</span>
+              </div>
+              <div class="back-actions">
+                <a href="https://github.com/JUANES31081/PORTAFOLIO_/blob/main/Machine_Learning_Deep_Learning/Red%20PLN.ipynb" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="fab fa-github" aria-hidden="true"></i> View Code
+                </a>
+                <button class="btn btn-ghost flip-btn" onclick="flipCard(this)">
+                  <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 — Point-E -->
+        <div class="project-item" data-category="genai">
+          <div class="project-card" id="card-pointe">
+            <div class="project-front">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&q=80" alt="3D generative AI model creation" class="project-img">
+                <div class="project-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="project-info">
+                <div class="project-category-label">Generative AI</div>
+                <h3 class="project-title">Point-E 3D Generator</h3>
+                <p class="project-short">Text-to-3D generation with OpenAI's Point-E for VR applications.</p>
+                <div class="project-tags">
+                  <span class="tag">OpenAI</span><span class="tag">Point-E</span><span class="tag">Python</span>
+                </div>
+                <button class="btn btn-primary flip-btn" onclick="flipCard(this)" id="flip-pointe-front">
+                  <i class="fas fa-info-circle" aria-hidden="true"></i> Learn More
+                </button>
+              </div>
+            </div>
+            <div class="project-back">
+              <div class="back-category">Generative AI</div>
+              <h3>Point-E 3D Model Generator</h3>
+              <p>Leverages OpenAI's Point-E for text-to-3D object generation. Originally designed to minimize 3D modeling phases for VR applications — an early exploration into generative spatial computing, now a rapidly growing field at the frontier of AI.</p>
+              <div class="back-tags">
+                <span class="tag">OpenAI</span><span class="tag">3D Generation</span><span class="tag">VR</span><span class="tag">GenAI</span>
+              </div>
+              <div class="back-actions">
+                <a href="https://github.com/JUANES31081/PORTAFOLIO_/blob/main/Machine_Learning_Deep_Learning/Texto_a_modelo_OpenAI_Point_E.ipynb" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="fab fa-github" aria-hidden="true"></i> View Code
+                </a>
+                <button class="btn btn-ghost flip-btn" onclick="flipCard(this)">
+                  <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 — Cybersecurity -->
+        <div class="project-item" data-category="data">
+          <div class="project-card" id="card-security">
+            <div class="project-front">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&q=80" alt="Cybersecurity code and network analysis" class="project-img">
+                <div class="project-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="project-info">
+                <div class="project-category-label">Cybersecurity</div>
+                <h3 class="project-title">Cybersecurity Toolkit</h3>
+                <p class="project-short">Hash verification &amp; VirusTotal API integration for automated threat detection.</p>
+                <div class="project-tags">
+                  <span class="tag">Python</span><span class="tag">VirusTotal</span><span class="tag">Security</span>
+                </div>
+                <button class="btn btn-primary flip-btn" onclick="flipCard(this)" id="flip-security-front">
+                  <i class="fas fa-info-circle" aria-hidden="true"></i> Learn More
+                </button>
+              </div>
+            </div>
+            <div class="project-back">
+              <div class="back-category">Cybersecurity</div>
+              <h3>Cybersecurity Toolkit</h3>
+              <p>Python security scripts including file hash verification (SHA/MD5) and automated VirusTotal API integration for malware detection. Bridges security engineering with data automation — demonstrating full-stack awareness beyond just ML.</p>
+              <div class="back-tags">
+                <span class="tag">Python</span><span class="tag">VirusTotal API</span><span class="tag">SHA/MD5</span><span class="tag">Automation</span>
+              </div>
+              <div class="back-actions">
+                <a href="https://github.com/JUANES31081/PORTAFOLIO_/tree/main/Ciberseguridad" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="fab fa-github" aria-hidden="true"></i> View Code
+                </a>
+                <button class="btn btn-ghost flip-btn" onclick="flipCard(this)">
+                  <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 — Web Scraping -->
+        <div class="project-item" data-category="data">
+          <div class="project-card" id="card-scraping">
+            <div class="project-front">
+              <div class="project-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&q=80" alt="Web scraping data pipeline code" class="project-img">
+                <div class="project-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="project-info">
+                <div class="project-category-label">Data Engineering</div>
+                <h3 class="project-title">Web Scraping Data Pipeline</h3>
+                <p class="project-short">Automated data extraction and transformation pipeline from web sources.</p>
+                <div class="project-tags">
+                  <span class="tag">Python</span><span class="tag">BeautifulSoup</span><span class="tag">Pandas</span>
+                </div>
+                <button class="btn btn-primary flip-btn" onclick="flipCard(this)" id="flip-scraping-front">
+                  <i class="fas fa-info-circle" aria-hidden="true"></i> Learn More
+                </button>
+              </div>
+            </div>
+            <div class="project-back">
+              <div class="back-category">Data Engineering</div>
+              <h3>Web Scraping Data Pipeline</h3>
+              <p>Automated extraction and transformation of data from web pages using Python. Covers HTML structure navigation, data parsing, and pipeline construction — foundational data engineering skills for building reliable data collection workflows at scale.</p>
+              <div class="back-tags">
+                <span class="tag">Python</span><span class="tag">BeautifulSoup</span><span class="tag">Pipeline</span><span class="tag">Automation</span>
+              </div>
+              <div class="back-actions">
+                <a href="https://github.com/JUANES31081/PORTAFOLIO_/blob/main/Web_Scraping_Analisis_Datos/Web_scarpping.ipynb" target="_blank" rel="noopener" class="btn btn-outline">
+                  <i class="fab fa-github" aria-hidden="true"></i> View Code
+                </a>
+                <button class="btn btn-ghost flip-btn" onclick="flipCard(this)">
+                  <i class="fas fa-arrow-left" aria-hidden="true"></i> Back
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section contact-section" aria-label="Contact information">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-subtitle">Whether it's a data project, AI consulting, or just a chat about tech — I'm open to great conversations.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card reveal-up">
+          <div class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+          <p>Available for project discussions, collaboration, and opportunities.</p>
+          <a href="mailto:juanes.jia@gmail.com" class="contact-link" id="contact-email-link">
+            juanes.jia@gmail.com <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="contact-card reveal-up">
+          <div class="contact-icon linkedin-icon" aria-hidden="true"><i class="fab fa-linkedin"></i></div>
+          <h3>LinkedIn</h3>
+          <p>Connect professionally and explore my work experience &amp; endorsements.</p>
+          <a href="https://www.linkedin.com/in/juan-esteban-infante-andrade-573292267/" target="_blank" rel="noopener" class="contact-link" id="contact-linkedin-link">
+            Juan E. Infante <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="contact-card reveal-up">
+          <div class="contact-icon github-icon" aria-hidden="true"><i class="fab fa-github"></i></div>
+          <h3>GitHub</h3>
+          <p>Explore all my repositories, code quality, and open source contributions.</p>
+          <a href="https://github.com/JUANES31081" target="_blank" rel="noopener" class="contact-link" id="contact-github-link">
+            @JUANES31081 <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+      <div class="contact-footer reveal-up">
+        <p>Currently open to new opportunities in <span class="highlight">Data Science</span>, <span class="highlight">AI Engineering</span>, and <span class="highlight">MLOps</span> roles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-brand"><span class="logo-bracket">&lt;</span>JEIA<span class="logo-bracket">/&gt;</span></p>
+        <p class="footer-text">Built with ❤️ &amp; lots of data — Juan Esteban Infante Andrade © <span id="year"></span></p>
+        <p class="footer-sub">Systems Engineer · Data Scientist · AI Engineer</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- App scripts -->
+  <script src="js/cards.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
 </html>
